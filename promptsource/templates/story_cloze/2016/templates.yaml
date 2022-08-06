@@ -16,9 +16,9 @@ templates:
       original_task: true
     name: Answer Given options negation
     reference: ''
-  1a4946f9-a0e2-4fbb-aee8-b26ead2cf6b8: !Template
+  1a4946f9-a0e2-4fbb-aee8-b26ead2cf6b9: !Template
     answer_choices: '{{sentence_quiz1}} ||| {{sentence_quiz2}}'
-    id: 1a4946f9-a0e2-4fbb-aee8-b26ead2cf6b8
+    id: 1a4946f9-a0e2-4fbb-aee8-b26ead2cf6b9
     jinja: '{{input_sentence_1}} {{input_sentence_2}} {{input_sentence_3}} {{input_sentence_4}}
       What is a possible continuation for the story given the following options ?
       - {{answer_choices | join("\n- ")}} ||| {{answer_choices[answer_right_ending
@@ -48,9 +48,9 @@ templates:
       original_task: true
     name: Choose Story Ending
     reference: ''
-  1a9d53bc-eb77-4e7c-af6e-3d15b79d6cf1: !Template
+  1a9d53bc-eb77-4e7c-af6e-3d15b79d6cf2: !Template
     answer_choices: '{{sentence_quiz1}} ||| {{sentence_quiz2}}'
-    id: 1a9d53bc-eb77-4e7c-af6e-3d15b79d6cf1
+    id: 1a9d53bc-eb77-4e7c-af6e-3d15b79d6cf2
     jinja: "Read the following story :\n\n{{input_sentence_1}}\n{{input_sentence_2}}\n\
       {{input_sentence_3}}\n{{input_sentence_4}}\n\nChoose an impossible ending for the\
       \ previous story from the following options: \n- {{answer_choices | join(\"\\\
@@ -80,9 +80,9 @@ templates:
       original_task: true
     name: Movie What Happens Next
     reference: ''
-  9dab69d1-cad0-4d2f-a7cc-120df233571c: !Template
+  9dab69d1-cad0-4d2f-a7cc-120df233571d: !Template
     answer_choices: '{{sentence_quiz1}} ||| {{sentence_quiz2}}'
-    id: 9dab69d1-cad0-4d2f-a7cc-120df233571c
+    id: 9dab69d1-cad0-4d2f-a7cc-120df233571d
     jinja: 'Yesterday, I watched a movie. Here''s what happened: {{input_sentence_1}}
       {{input_sentence_2}} {{input_sentence_3}} {{input_sentence_4}} What does not happens
       next? - {{answer_choices | join("\n- ")}} ||| {{answer_choices[2-answer_right_ending
@@ -112,9 +112,9 @@ templates:
       original_task: true
     name: Story Continuation and Options
     reference: ''
-  b5c8445f-2d3a-4691-bdd5-58956816702f: !Template
+  b5c8445f-2d3a-4691-bdd5-589568167030: !Template
     answer_choices: '{{sentence_quiz1}} ||| {{sentence_quiz2}}'
-    id: b5c8445f-2d3a-4691-bdd5-58956816702f
+    id: b5c8445f-2d3a-4691-bdd5-589568167030
     jinja: "What is an impossible continuation for the following story ? \n\n{{input_sentence_1}}\n\
       {{input_sentence_2}}\n{{input_sentence_3}}\n{{input_sentence_4}}\n\nChoose from\
       \ the following options:\n- {{answer_choices | join(\"\\n- \")}}\n|||\n\n{{answer_choices[2-answer_right_ending]}}"
@@ -143,9 +143,9 @@ templates:
       original_task: false
     name: Generate Ending
     reference: ''
-  baffa716-43cf-4954-a35c-655d775321e6: !Template
+  baffa716-43cf-4954-a35c-655d775321e7: !Template
     answer_choices: '{{sentence_quiz1}} ||| {{sentence_quiz2}}'
-    id: baffa716-43cf-4954-a35c-655d775321e6
+    id: baffa716-43cf-4954-a35c-655d775321e7
     jinja: 'Generate an impossible ending for the following story: {{input_sentence_1}}
       {{input_sentence_2}} {{input_sentence_3}} {{input_sentence_4}} ||| {{answer_choices[2-answer_right_ending]}}'
     metadata: !TemplateMetadata
@@ -174,9 +174,9 @@ templates:
       original_task: true
     name: Novel Correct Ending
     reference: ''
-  c6f3d802-4f97-449f-a911-03470d418f7d: !Template
+  c6f3d802-4f97-449f-a911-03470d418f7e: !Template
     answer_choices: '{{sentence_quiz1}} ||| {{sentence_quiz2}}'
-    id: c6f3d802-4f97-449f-a911-03470d418f7d
+    id: c6f3d802-4f97-449f-a911-03470d418f7e
     jinja: 'I read the following novel: {{input_sentence_1}} {{input_sentence_2}}
       {{input_sentence_3}} {{input_sentence_4}} What do you think is the least probable
       ending? You can choose from the following options: - {{answer_choices | join("\n-
@@ -190,9 +190,9 @@ templates:
       original_task: true
     name: Novel Correct Ending negation
     reference: ''
-  baffa716-43cf-4954-a35c-655d775321e7: !Template
+  baffa716-43cf-4954-a35c-655d775321e8: !Template
     answer_choices: '{{sentence_quiz1}} ||| {{sentence_quiz2}}'
-    id: baffa716-43cf-4954-a35c-655d775321e7
+    id: baffa716-43cf-4954-a35c-655d775321e8
     jinja: 'Generate a possible ending for the following story: {{input_sentence_1}}
       {{input_sentence_2}} {{input_sentence_3}} {{input_sentence_4}} ||| {{answer_choices[answer_right_ending
       -1]}}'
@@ -262,9 +262,9 @@ templates:
       original_task: false
     name: continuation cat dog
     reference: ''
-  94972071-a726-42a3-a726-13f414b65e67: !Template
+  94972071-a726-42a3-a726-13f414b65e68: !Template
     answer_choices: '{{sentence_quiz1}} ||| {{sentence_quiz2}}'
-    id: 94972071-a726-42a3-a726-13f414b65e67
+    id: 94972071-a726-42a3-a726-13f414b65e68
     jinja: '{{input_sentence_1}} {{input_sentence_2}} {{input_sentence_3}} {{input_sentence_4}}
 
       Pick one: The following sentence is  "{{answer_choices[0]}}" or "{{answer_choices[1]}}".
