@@ -48,6 +48,22 @@ templates:
       original_task: true
     name: Choose Story Ending
     reference: ''
+  1a9d53bc-eb77-4e7c-af6e-3d15b79d6cf1: !Template
+    answer_choices: '{{sentence_quiz1}} ||| {{sentence_quiz2}}'
+    id: 1a9d53bc-eb77-4e7c-af6e-3d15b79d6cf1
+    jinja: "Read the following story :\n\n{{input_sentence_1}}\n{{input_sentence_2}}\n\
+      {{input_sentence_3}}\n{{input_sentence_4}}\n\nChoose an impossible ending for the\
+      \ previous story from the following options: \n- {{answer_choices | join(\"\\\
+      n- \")}}\n|||\n\n{{answer_choices[2-answer_right_ending]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - en
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Choose Story Ending negation
+    reference: ''
   9dab69d1-cad0-4d2f-a7cc-120df233571c: !Template
     answer_choices: '{{sentence_quiz1}} ||| {{sentence_quiz2}}'
     id: 9dab69d1-cad0-4d2f-a7cc-120df233571c
@@ -63,6 +79,22 @@ templates:
       - Accuracy
       original_task: true
     name: Movie What Happens Next
+    reference: ''
+  9dab69d1-cad0-4d2f-a7cc-120df233571c: !Template
+    answer_choices: '{{sentence_quiz1}} ||| {{sentence_quiz2}}'
+    id: 9dab69d1-cad0-4d2f-a7cc-120df233571c
+    jinja: 'Yesterday, I watched a movie. Here''s what happened: {{input_sentence_1}}
+      {{input_sentence_2}} {{input_sentence_3}} {{input_sentence_4}} What does not happens
+      next? - {{answer_choices | join("\n- ")}} ||| {{answer_choices[2-answer_right_ending
+      ]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - en
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Movie What Happens Next negation
     reference: ''
   b5c8445f-2d3a-4691-bdd5-58956816702f: !Template
     answer_choices: '{{sentence_quiz1}} ||| {{sentence_quiz2}}'
@@ -80,6 +112,21 @@ templates:
       original_task: true
     name: Story Continuation and Options
     reference: ''
+  b5c8445f-2d3a-4691-bdd5-58956816702f: !Template
+    answer_choices: '{{sentence_quiz1}} ||| {{sentence_quiz2}}'
+    id: b5c8445f-2d3a-4691-bdd5-58956816702f
+    jinja: "What is an impossible continuation for the following story ? \n\n{{input_sentence_1}}\n\
+      {{input_sentence_2}}\n{{input_sentence_3}}\n{{input_sentence_4}}\n\nChoose from\
+      \ the following options:\n- {{answer_choices | join(\"\\n- \")}}\n|||\n\n{{answer_choices[2-answer_right_ending]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - en
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Story Continuation and Options negation
+    reference: ''
   baffa716-43cf-4954-a35c-655d775321e6: !Template
     answer_choices: '{{sentence_quiz1}} ||| {{sentence_quiz2}}'
     id: baffa716-43cf-4954-a35c-655d775321e6
@@ -95,6 +142,21 @@ templates:
       - ROUGE
       original_task: false
     name: Generate Ending
+    reference: ''
+  baffa716-43cf-4954-a35c-655d775321e6: !Template
+    answer_choices: '{{sentence_quiz1}} ||| {{sentence_quiz2}}'
+    id: baffa716-43cf-4954-a35c-655d775321e6
+    jinja: 'Generate an impossible ending for the following story: {{input_sentence_1}}
+      {{input_sentence_2}} {{input_sentence_3}} {{input_sentence_4}} ||| {{answer_choices[2-answer_right_ending]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - en
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Generate Ending negation
     reference: ''
   c6f3d802-4f97-449f-a911-03470d418f7d: !Template
     answer_choices: '{{sentence_quiz1}} ||| {{sentence_quiz2}}'
@@ -112,7 +174,22 @@ templates:
       original_task: true
     name: Novel Correct Ending
     reference: ''
-
+  c6f3d802-4f97-449f-a911-03470d418f7d: !Template
+    answer_choices: '{{sentence_quiz1}} ||| {{sentence_quiz2}}'
+    id: c6f3d802-4f97-449f-a911-03470d418f7d
+    jinja: 'I read the following novel: {{input_sentence_1}} {{input_sentence_2}}
+      {{input_sentence_3}} {{input_sentence_4}} What do you think is the least probable
+      ending? You can choose from the following options: - {{answer_choices | join("\n-
+      ")}} ||| {{answer_choices[2-answer_right_ending]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - en
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Novel Correct Ending negation
+    reference: ''
   baffa716-43cf-4954-a35c-655d775321e7: !Template
     answer_choices: '{{sentence_quiz1}} ||| {{sentence_quiz2}}'
     id: baffa716-43cf-4954-a35c-655d775321e7
@@ -158,4 +235,68 @@ templates:
       - ROUGE
       original_task: false
     name: Generate Ending scaling negation
+    reference: ''
+
+
+  1178af3f-5ad2-488e-85f4-abe955fc511f: !Template
+    answer_choices: '{{sentence_quiz1}} ||| {{sentence_quiz2}}'
+    id: 1178af3f-5ad2-488e-85f4-abe955fc511f
+    jinja: '{{input_sentence_1}} {{input_sentence_2}} {{input_sentence_3}} {{input_sentence_4}} Single-family zoning is bad for American cities.
+      ||| {{answer_choices[answer_right_ending-1]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages: null
+      metrics: Accuracy
+      original_task: false
+    name: irrelevant from glue qqp
+    reference: ''
+  a3ceb906-bcd7-4ea0-96a0-f25c16d0b1a9: !Template
+    answer_choices: cat ||| dog
+    id: a3ceb906-bcd7-4ea0-96a0-f25c16d0b1a9
+    jinja: Given {{input_sentence_1}} {{input_sentence_2}} {{input_sentence_3}} {{input_sentence_4}} What may be an appropriate continuation? Answer cat
+      if {{answer_choices[0]}} and dog if {{answer_choices[1]}}. ||| {{answer_choices[answer_right_ending-1]}}
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages: null
+      metrics: Accuracy
+      original_task: false
+    name: continuation cat dog
+    reference: ''
+  94972071-a726-42a3-a726-13f414b65e67: !Template
+    answer_choices: '{{sentence_quiz1}} ||| {{sentence_quiz2}}'
+    id: 94972071-a726-42a3-a726-13f414b65e67
+    jinja: '{{input_sentence_1}} {{input_sentence_2}} {{input_sentence_3}} {{input_sentence_4}}
+
+      Pick one: The following sentence is  "{{answer_choices[0]}}" or "{{answer_choices[1]}}".
+
+      |||
+
+      {{answer_choices[answer_right_ending-1]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - en
+      metrics:
+      - Accuracy
+      original_task: true
+    name: duplicate or not from glue qqp
+    reference: ''
+  94972071-a726-42a3-a726-13f414b65e67: !Template
+    answer_choices: '{{sentence_quiz1}} ||| {{sentence_quiz2}}'
+    id: 94972071-a726-42a3-a726-13f414b65e67
+    jinja: '{{input_sentence_1}} {{input_sentence_2}} {{input_sentence_3}} {{input_sentence_4}}
+
+      Pick one: The unfollowing sentence is  "{{answer_choices[0]}}" or "{{answer_choices[1]}}".
+
+      |||
+
+      {{answer_choices[2-answer_right_ending]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - en
+      metrics:
+      - Accuracy
+      original_task: true
+    name: duplicate or not from glue qqp negation
     reference: ''
