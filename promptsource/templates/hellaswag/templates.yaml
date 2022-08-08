@@ -45,14 +45,13 @@ templates:
       original_task: false
     name: Topic without the ending answer
     reference: Generate the topic sentence with only the starting sentence
-  1fd44f45-d0e6-41ad-a01f-737f4c53645b: !Template
-    answer_choices: '{{endings | join(" ||| ")}}'
-    id: 1fd44f45-d0e6-41ad-a01f-737f4c53645b
+  1fd44f45-d0e6-41ad-a01f-737f4c53646d: !Template
+    answer_choices: '{% if label | int() == 0 %}{{endings[0:2] | join(" ||| ")}}{% else %} {{[endings[0], endings[label | int()]] | join(" ||| ")}}{% endif %}'
+    id: 1fd44f45-d0e6-41ad-a01f-737f4c53646d
     jinja: 'Complete the sentence: {{ctx}}
 
       |||
-
-      {{answer_choices[label | int()]}}'
+      {% if label | int() == 0 %}{{answer_choices[label | int()]}}{% else %} {{answer_choices[1 | int()]}}{% endif %}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -61,7 +60,7 @@ templates:
       - BLEU
       - ROUGE
       original_task: false
-    name: Open-ended completion
+    name: Open-ended completion scaling 2 options
     reference: Template for open-ended common sense completion
   4ebf22a1-2d23-426c-a083-b43fc8567687: !Template
     answer_choices: null
@@ -256,3 +255,20 @@ templates:
     name: if_begins_how_continues
     reference: Returns a Ending <int> string in the template (similar to how ends
       paraphrased)
+  1fd44f45-d0e6-41ad-a01f-737f4c53646d: !Template
+    answer_choices: '{% if label | int() == 0 %}{{endings[0:2] | join(" ||| ")}}{% else %} {{[endings[0], endings[label | int()]] | join(" ||| ")}}{% endif %}'
+    id: 1fd44f45-d0e6-41ad-a01f-737f4c53646d
+    jinja: 'Complete the sentence: {{ctx}}
+
+      |||
+      {% if label | int() == 0 %}{{answer_choices[label | int()]}}{% else %} {{answer_choices[1 | int()]}}{% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - en
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Open-ended completion scaling 2 options
+    reference: Template for open-ended common sense completion
