@@ -356,7 +356,7 @@ class Template(yaml.YAMLObject):
             if input_string[end-1]=='{':
                 end-=1
             input_result+=input_string[flag:start]
-            instruct[f'<extra_id_{tmp}>'] = input_string[start:end] '
+            instruct[f'<extra_id_{tmp}>'] = input_string[start:end]
             input_result+=f'<extra_id_{tmp}>'
             flag = end
             tmp+=1
