@@ -310,6 +310,11 @@ class Template(yaml.YAMLObject):
     def my_apply_instruct_4(self, example):
         input, target = self.apply(example)
         return f'input: {input}\n output: <extra_id_0>', f'<extra_id_0> {target}'
+    def dict_to_string(self, input_dict):
+        input_dict_string = ""
+        for key, value in input_dict.items():
+            input_dict_string+=f"{key} {value}"
+        return input_dict_string
     # instruct_3:mask whole input
     def my_apply_instruct_3(self, example):
         input, target, instruct= self.my_apply_instruct_helper(example)
@@ -320,10 +325,7 @@ class Template(yaml.YAMLObject):
             key=f'<extra_id_{index}>'
             input_dict[key] = input_list[index]
             input_mask+=key+instruct[key]
-        input_dict_string = ""
-        for key, value in input_dict.items():
-            input_dict_string+=f"{key} {value}"
-        return  f'input: {input_mask}\n output: {target}', input_dict_string
+        return  f'input: {input_mask}\n output: {target}', self.dict_to_string(input_dict)
       
 
     #split input/instruct/target
