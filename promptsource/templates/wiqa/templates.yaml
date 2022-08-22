@@ -126,7 +126,7 @@ templates:
     name: effect_with_string_answer
     reference: ''
   667c291f-6a36-4334-aa49-804c9e72500b: !Template
-    answer_choices: 'indirectly impacting a step of the process ||| not impacting any step of the process'
+    answer_choices: 'directly impacting a step of the process ||| indirectly impacting a step of the process ||| not impacting any step of the process'
     id: 667c291f-6a36-4334-aa49-804c9e72500b
     jinja: 'Process:
 
