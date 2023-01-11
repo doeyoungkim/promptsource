@@ -1,0 +1,24 @@
+dataset: tatoeba
+templates:
+  11009152-5677-422f-9009-55f968f839de: !Template
+    answer_choices: null
+    id: 11009152-5677-422f-9009-55f968f839de
+    jinja: '{{en}} === Translate the above sentence into Korean: |||{{kor}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: translate from eng to kor
+    reference: null
+  f75d6ef0-26c3-4ca7-98be-922ffb131309: !Template
+    answer_choices: null
+    id: f75d6ef0-26c3-4ca7-98be-922ffb131309
+    jinja: '{{kor}} === Translate the above sentence into Korean: |||{{en}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: translate from kor to eng
+    reference: null

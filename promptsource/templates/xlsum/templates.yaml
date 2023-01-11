@@ -1,0 +1,26 @@
+dataset: xlsum
+templates:
+  ed2182c2-f5a1-4618-8b65-9cf93bddffba: !Template
+    answer_choices: null
+    id: ed2182c2-f5a1-4618-8b65-9cf93bddffba
+    jinja: '{{text_en}} === Translate the above sentence into Korean, and then write
+      a summary of the text above :||| {{summary}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: translate to kor and summarize
+    reference: null
+  ed4a2f67-ed6f-44e1-9dbc-90be45a08547: !Template
+    answer_choices: null
+    id: ed4a2f67-ed6f-44e1-9dbc-90be45a08547
+    jinja: '{{text}} === Translate the above sentence into English, and then write
+      a summary of the text above :||| {{summary_en}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: translate to eng and summarize
+    reference: null
